@@ -951,14 +951,14 @@ static struct Interface *process_command(int command_sock, int ifaces_sock, stru
 		return ifaces;
 	}
 	buffer[rc] = '\0';
-	cJSON *cjson_ra_config = NULL;
 	cJSON *cjson_action_iface = NULL;
+	cJSON *cjson_cdb_name = NULL;
 	cJSON *cjson_interface = NULL;
 	cJSON *cjson_prefix_ref = NULL;
 	cJSON *cjson_prefix = NULL;
 	cJSON *cjson_prefixes = NULL;
-	cJSON *cjson_cdb_name = NULL;
 	cJSON *cjson_prefix_addr = NULL;
+	cJSON *cjson_ra_config = NULL;
 	char *iface_cdb_name = NULL;
 	char *addr_str = NULL;
 	char *action_str = NULL;
