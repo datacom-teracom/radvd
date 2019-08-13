@@ -550,10 +550,10 @@ struct Interface *update_iface(struct Interface *iface, cJSON *cjson_iface)
 		}
 	}
 
-	if (!(cjson_ptr = cJSON_GetObjectItemCaseSensitive(cjson_iface, "mtu"))) {
+	if ((cjson_ptr = cJSON_GetObjectItemCaseSensitive(cjson_iface, "mtu"))) {
 		if (cJSON_IsNumber(cjson_ptr)) {
-			iface-> AdvLinkMTU = cjson_ptr->valueint;
-			dlog(LOG_DEBUG, 1, "cJSON MTU %u", iface->AdvLinkMTU);
+			iface-> AdvLinkMTU = cjson_ptr->valueuint;
+			dlog(LOG_DEBUG, 1, "cJSON MTU %d", iface->AdvLinkMTU);
 		}
 	}
 
