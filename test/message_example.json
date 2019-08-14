@@ -4,9 +4,9 @@
                 "name": "wlp1",
                 "cdb_name": "cdb_wlp1",
                 "adv_send_advert": true,
+                "ip_mtu": 1280,
                 "max_rtr_interval": 650.5,
                 "min_rtr_interval": 350.5,
-                "mtu": 1280,
                 "adv_default_lifetime": 1301,
                 "prefixes": [
                         {
