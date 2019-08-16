@@ -49,6 +49,7 @@ void iface_init_defaults(struct Interface *iface)
 
 	iface->AdvLinkMTU = DFLT_AdvLinkMTU;
 	iface->AdvRAMTU = DFLT_AdvRAMTU;
+	iface->AdvRAMTUSuppress = DFLT_AdvRAMTUSuppress;
 }
 
 void touch_iface(struct Interface *iface)
@@ -548,6 +549,11 @@ struct Interface *update_iface(struct Interface *iface, cJSON *cjson_iface)
 			iface->MinRtrAdvInterval = cjson_ptr->valuedouble;
 			dlog(LOG_DEBUG, 1, "cJSON min_rtr_interval %lf", iface->MinRtrAdvInterval);
 		}
+	}
+
+	if ((cjson_ptr = cJSON_GetObjectItemCaseSensitive(cjson_iface, "mtu_suppress"))) {
+		iface->AdvRAMTUSuppress = cJSON_IsTrue(cjson_ptr);
+		dlog(LOG_DEBUG, 1, "cJSON mtu_suppress %d", iface->AdvRAMTUSuppress);
 	}
 
 	if ((cjson_ptr = cJSON_GetObjectItemCaseSensitive(cjson_iface, "ip_mtu"))) {

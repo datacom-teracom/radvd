@@ -400,6 +400,7 @@ START_TEST(test_json_configure_one_iface_without_prefixes)
 	ck_assert(fabs(650.5 - iface->MaxRtrAdvInterval) < eps);
 	ck_assert(fabs(350.5 - iface->MinRtrAdvInterval) < eps);
 	ck_assert_int_eq(1490, iface->AdvLinkMTU);
+	ck_assert_int_eq(0, iface->AdvRAMTUSuppress);
 	ck_assert_int_eq(1301, iface->ra_header_info.AdvDefaultLifetime);
 	free_ifaces(iface);
 	free(msg);

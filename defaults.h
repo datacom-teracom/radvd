@@ -46,6 +46,7 @@
 #define DFLT_MinDelayBetweenRAs MIN_DELAY_BETWEEN_RAS
 #define DFLT_AdvDefaultPreference 0
 #define DFLT_AdvRAMTU RFC2460_MIN_MTU
+#define DFLT_AdvRAMTUSuppress 1
 #define DFLT_UnicastOnly 0
 #define DFLT_AdvRASolicitedUnicast 1
 
