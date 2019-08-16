@@ -7,6 +7,7 @@
                 "ip_mtu": 1280,
                 "max_rtr_interval": 650.5,
                 "min_rtr_interval": 350.5,
+                "mtu_suppress": false,
                 "adv_default_lifetime": 1301,
                 "prefixes": [
                         {

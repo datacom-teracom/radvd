@@ -665,7 +665,7 @@ static struct safe_buffer_list *build_ra_options(struct Interface const *iface, 
 		cur = add_ra_options_dnssl(cur, iface, iface->AdvDNSSLList, iface->state_info.cease_adv, dest);
 	}
 
-	if (iface->AdvLinkMTU != 0 && schedule_option_mtu(dest, iface)) {
+	if (!iface->AdvRAMTUSuppress && iface->AdvLinkMTU != 0 && schedule_option_mtu(dest, iface)) {
 		cur->next = new_safe_buffer_list();
 		cur = cur->next;
 		add_ra_option_mtu(cur->sb, iface->AdvLinkMTU);
